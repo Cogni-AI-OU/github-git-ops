@@ -3,6 +3,7 @@ extends: default
 ignore: |
   .cache
   .git
+  Pulumi.*.yaml
 rules:
   comments:
     min-spaces-from-content: 1

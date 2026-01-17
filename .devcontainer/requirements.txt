@@ -10,5 +10,6 @@ molecule
 molecule-docker
 pipenv
 pre-commit
+pulumi-github
 requests==2.31.0
 uv

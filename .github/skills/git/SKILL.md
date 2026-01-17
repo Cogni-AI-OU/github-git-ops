@@ -27,6 +27,13 @@ Expert in advanced git usage for repository agents. Prioritize non-interactive, 
 - **Cherry-picking with editor bypass**: `GIT_EDITOR=true git cherry-pick --continue` (auto-accept commit message during conflict resolution)
 - **Stashing partial work** (non-interactive): `git stash push -m "wip-description" -- path/to/file` (use pathspec for selective stashing; avoid `-p` as it is interactive)
 
+## History Rewrites with Hooks
+
+- Rewrite authors fast: `git rebase --rebase-merges --committer-date-is-author-date --exec 'SKIP=ansible-lint git commit --amend --no-edit --author="<Name> <email>"' HEAD~N`.
+- If a hook fails mid-rebase, rerun the amend with `SKIP=<hook> git commit --amend --no-edit --author="..."` then `SKIP=<hook> git rebase --continue`.
+- Keep CI honest: skipping hooks is tactical; rerun the skipped hook after the rewrite (`pre-commit run ansible-lint --files <paths>`), or fix the lint errors.
+- After successful rewrite, verify clean tree (`git status --short`) and push with lease: `git push --force-with-lease origin <branch>` (and any additional remotes).
+
 ### Bypassing Editor Prompts
 
 Git commands that normally open an editor can be made non-interactive:
