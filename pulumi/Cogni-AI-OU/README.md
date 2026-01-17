@@ -37,3 +37,19 @@ pulumi stack --show-urns
 
 - 403 on `vulnerability-alerts`: token lacks **Administration (read)** or `security_events`.
 - Verify token in use: `pulumi config get github:token --show-secrets` and `echo $GITHUB_TOKEN`.
+
+## References
+
+- Pulumi CLI download/install: [Pulumi download & install][pulumi-install]
+- Pulumi GitHub provider install/config: [Pulumi GitHub provider install/config][pulumi-github-provider]
+- Pulumi GitHub YAML template: [Pulumi GitHub YAML template][pulumi-template]
+- GitHub REST: check if vulnerability alerts are enabled: [GitHub REST vulnerability alerts][gh-vuln-alerts]
+- GitHub REST: fine-grained PAT required permissions: [GitHub PAT permissions][gh-pat-perms]
+
+<!-- Named links -->
+
+[pulumi-install]: https://www.pulumi.com/docs/get-started/download-install/
+[pulumi-github-provider]: https://www.pulumi.com/registry/packages/github/installation-configuration/
+[pulumi-template]: https://github.com/pulumi/templates/blob/master/github-yaml/Pulumi.yaml
+[gh-vuln-alerts]: https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#check-if-vulnerability-alerts-are-enabled-for-a-repository
+[gh-pat-perms]: https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens
