@@ -1,0 +1,78 @@
+---
+name: Cogni-AI-OU
+description: A minimal GitHub Pulumi YAML program.
+runtime: yaml
+resources:
+  repo_github_git_ops:
+    type: github:index/repository:Repository
+    properties:
+      allowMergeCommit: false
+      allowRebaseMerge: false
+      allowSquashMerge: false
+      defaultBranch: main
+      description: Scripts to operate GitHub
+      hasDownloads: true
+      hasIssues: true
+      hasProjects: true
+      hasWiki: true
+      name: github-git-ops
+      securityAndAnalysis:
+        secretScanning:
+          status: disabled
+        secretScanningPushProtection:
+          status: disabled
+      template:
+        owner: Cogni-AI-OU
+        repository: example-ops-template
+      visibility: public
+      vulnerabilityAlerts: true
+  repo_example_ops_template:
+    type: github:index/repository:Repository
+    properties:
+      allowMergeCommit: false
+      allowRebaseMerge: false
+      allowSquashMerge: false
+      defaultBranch: main
+      description: Example template for Ops repos.
+      hasDownloads: true
+      hasIssues: true
+      hasProjects: true
+      hasWiki: true
+      isTemplate: true
+      name: example-ops-template
+      securityAndAnalysis:
+        secretScanning:
+          status: disabled
+        secretScanningPushProtection:
+          status: disabled
+      visibility: public
+      vulnerabilityAlerts: true
+  repo_ansible_role_template:
+    type: github:index/repository:Repository
+    properties:
+      allowMergeCommit: false
+      allowRebaseMerge: false
+      allowSquashMerge: false
+      defaultBranch: main
+      description: Ansible role template
+      hasDownloads: true
+      hasIssues: true
+      hasProjects: true
+      hasWiki: true
+      isTemplate: true
+      name: ansible-role-template
+      securityAndAnalysis:
+        secretScanning:
+          status: disabled
+        secretScanningPushProtection:
+          status: disabled
+      visibility: public
+      vulnerabilityAlerts: true
+outputs:
+  repositoryName: ${repo_github_git_ops.name}
+  repositoryOpsTemplateName: ${repo_example_ops_template.name}
+  repositoryAnsibleTemplateName: ${repo_ansible_role_template.name}
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: github-yaml

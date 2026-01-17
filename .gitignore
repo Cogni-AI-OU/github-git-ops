@@ -224,3 +224,7 @@ actionlint
 *.org
 *.orig
 *.swp
+
+# Pulumi
+.pulumi/
+Pulumi.*.yaml
