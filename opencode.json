@@ -1,0 +1,7 @@
+{
+  "agent": {
+    "pr-reviewer": {
+      "description": "Reviews pull request for best practices and potential issues"
+    }
+  }
+}
