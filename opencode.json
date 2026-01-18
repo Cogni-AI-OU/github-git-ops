@@ -2,6 +2,9 @@
   "agent": {
     "pr-reviewer": {
       "description": "Reviews pull request for best practices and potential issues"
+    },
+    "security-reviewer": {
+      "description": "Performs security audits and identifies vulnerabilities in the codebase"
     }
   }
 }
