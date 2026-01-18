@@ -62,6 +62,8 @@ repos:
       - id: check-added-large-files
       - id: check-case-conflict
       - id: check-executables-have-shebangs
+      - id: check-json
+        exclude: (^\.devcontainer/devcontainer\.json$|^\.vscode/.*\.json$)
       - id: check-merge-conflict
       - id: check-yaml
       - id: end-of-file-fixer
